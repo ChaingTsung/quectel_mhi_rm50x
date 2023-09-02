@@ -1,0 +1,24 @@
+### This is a kernel module for Quectel RM50x series with pcie dbus. It has been passed on Ubuntu 20.04 x64 hosted with kernel 5.19 & ArchLinux x64 hosted with kernel 6.1 & Banana Pi R3 OpenWRT with branch `main`
+
+
+### How to build
+> For Openwrt & LEDE
+```shell
+mkdir -p package/wwan/driver/quectel_mhi_rm
+git clone $this package/wwan/driver/quectel_mhi_rm50x
+./script/feeds update -a && ./script/feeds install -a
+make menuconfig
+```
+### Notice: You have to clone my another package named Quectel_QConnector
+
+----
+
+> For Other Linux, such as Debain and etc.
+```shell
+git clone $this $your_path
+cd $your_path/src
+make
+sudo make install  ### Or manual run 'insmod pcie_mhi.ko'
+```
+
+
