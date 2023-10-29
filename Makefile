@@ -17,9 +17,9 @@ include $(INCLUDE_DIR)/package.mk
 define KernelPackage/pcie_mhi
   SUBMENU:=WWAN Support
   TITLE:=Kernel pcie driver for quectel RM50X Series MHI device
-  DEPENDS:=+pciids +pciutils +Quectel_QConnectManager
+  DEPENDS:=+pciids +pciutils +Quectel_QConnectManager +quectel_cm_5G
   FILES:=$(PKG_BUILD_DIR)/pcie_mhi.ko
-  AUTOLOAD:=$(call AutoLoad,90,quectel_pcie_mhi)
+  AUTOLOAD:=$(call AutoLoad,90,pcie_mhi)
 endef
 
 define KernelPackage/pcie_mhi/description
